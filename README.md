@@ -1,27 +1,13 @@
-# React + TypeScript + Vite
+# JSON editor app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Purpose of this app is to provide real time collaboration - JSON file editing -, as well as it allows to download the JSON file user is currently editing
+to their local machine. </br>
 
-Currently, two official plugins are available:
+The frontend part is in the ./src directory, it is a React app (Vite) with shadcn/ui components (wonderful library).
+To run frontend, write npm run dev in console. </br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The backend part is in the ./server directory. It is an Express server, for real-time collaboration Socket.io is being used.
+Data is stored in Mongo DB. To run backend server, go in ./server directory and write npm start. </br>
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+For text editor I chose to use React Ace (https://www.npmjs.com/package/react-ace). Easy to use, good looking editor. 
+Has support for json syntax highlighting. </br>
